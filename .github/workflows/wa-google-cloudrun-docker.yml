@@ -35,14 +35,14 @@ jobs:
           context: ./
           push: true
           dockerfile: ./Dockerfile   # Specify the path to your Dockerfile here
-          tags: moisesgc/webacademy:latest
+          tags: gregscristina/lab04:latest
   deploy:
     needs: lint
     name: Setup Gcloud Account
     runs-on: ubuntu-latest
     environment: wagcp_deploy
     env:
-      IMAGE_NAME: gcr.io/${{ secrets.GCP_PROJECT_ID }}/webacademy:latest
+      IMAGE_NAME: gcr.io/${{ secrets.GCP_PROJECT_ID }}/lab04:latest
     steps:
       # Git checkout
       - name: Checkout
